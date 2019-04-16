@@ -17,3 +17,5 @@ use Illuminate\Http\Request;
 Route::get("student/{id}","StudentController@show");
 Route::post("student","StudentController@store");
 Route::get("students","StudentController@all");
+
+Route::delete("students/{id}","StudentController@delete");

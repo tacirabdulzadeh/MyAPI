@@ -65,6 +65,24 @@ class StudentController extends Controller
         //
     }
 
+    public function delete($id)
+    {
+
+        $student= Student::whereId()->get();
+
+        if ($student->isEmpty())
+            return [
+                "message"=> "Failed"
+            ];
+        else {
+            $student->delete();
+            return ["message" => "success",
+                "student" => $student
+            ];
+            //
+        }
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
